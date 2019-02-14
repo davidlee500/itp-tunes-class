@@ -6,8 +6,10 @@
   <form action="/tracks?genre={{$genre}}" method="get">
     <input type="text" name="search" value="{{$search}}">
     <button type="submit">Search</button>
-    <a href="/tracks?genre={{$genre}}" class="btn-link">Clear</a>
+    <a href="/tracks?genre={{$genre}}" class="btn-link">Clear</a> 
+    <a href="/tracks/new">Add Track</a>
   </form>
+
   <table class="table">
     <tr>
       <th>Track</th>

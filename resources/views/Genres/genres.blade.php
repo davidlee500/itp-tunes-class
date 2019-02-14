@@ -18,6 +18,9 @@
         <td>
             <a href="tracks?genre={{$genre->Name}}">{{$genre->Name}}</a>
         </td>
+        <td>
+            <a href="genres/{{$genre->GenreId}}/edit" class="btn btn-primary" style="float:right;">Edit</a>
+        </td>
       </tr>
       @empty
         <tr>

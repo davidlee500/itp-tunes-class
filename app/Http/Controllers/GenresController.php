@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Validator;
 
 class GenresController extends Controller
 {
@@ -17,11 +18,47 @@ class GenresController extends Controller
 
     $genres = $query->get();
 
-    return view('genres', [
+    return view('Genres.genres', [
         'genres' => $genres,
         'search' => $request->query('search')
     ]);
 
     }
 
+    public function edit($GenreId=null){
+
+
+        if($GenreId){
+            $genres=DB::table('genres')->where('genres.GenreId','=', $GenreId)->first();
+        }
+        else{
+            $genres=DB::table('genres')->first();
+        }
+
+        return view('Genres.edit', [
+            'genres' => $genres
+        ]);
+    }
+
+    public function store(Request $request){
+        $input=$request->all();
+        $validation = Validator::make($input, [
+            'genre'=>'required|min:3|unique:genres,Name'
+        ]);
+        $url='/genres' . '/' . $request->genreId . '/edit';
+
+        if ($validation->fails()){
+            return redirect($url)
+                ->withInput()
+                ->withErrors($validation);
+        }
+
+        // otherwise insert the playlist into the db
+        DB::table('genres')->insert([
+            'Name' => $request->genre
+        ]);
+
+        // redirect back to /playlists
+        return redirect('/genres');
+    }
 }

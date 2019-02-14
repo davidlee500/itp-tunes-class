@@ -3,7 +3,7 @@
 @section('title','Invoices')
 
 @section('main')  
-  <form action="/" method="get">
+  <!-- <form action="/" method="get">
     <input type="text" name="search" value="{{$search}}">
     <button type="submit">Search</button>
     <a href="/" class="btn-link">Clear</a>
@@ -37,5 +37,5 @@
         </tr>
       @endforelse
 
-  </table>
+  </table> -->
 @endsection
