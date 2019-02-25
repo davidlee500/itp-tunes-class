@@ -21,14 +21,14 @@ class PlaylistController extends Controller
             $playlistTracks=[];
         }
 
-        return view('playlist.index', [
+        return view('Playlist.index', [
             'playlists'=>$playlists,
             'tracks'=>$playlistTracks
         ]);
     }
 
     public function create(){
-        return view('playlist.create');
+        return view('Playlist.create');
     }
 
     public function store(Request $request){
