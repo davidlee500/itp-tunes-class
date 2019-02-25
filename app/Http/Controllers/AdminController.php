@@ -8,7 +8,7 @@ use Auth;
 class AdminController extends Controller
 {
     public function index(){
-        return view('admin/profile',[
+        return view('Admin.profile',[
             'user'=>Auth::user()
         ]);
     }
