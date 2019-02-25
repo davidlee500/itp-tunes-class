@@ -6,9 +6,37 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div style="float:right;">
-      <a href="/genres" class="btn-link">Genres</a> <a href="/tracks" class="btn-link">Tracks</a>
-    </div>
+  <div class="container-fluid">
+    <ul class="nav">
+      @if (Auth::check())
+        <li class="nav-item">
+          <a href="/profile" class="nav-link">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a href="/invoices" class="nav-link">Invoices</a>
+        </li>
+        <li class="nav-item">
+          <a href="/logout" class="nav-link">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a href="/settings" class="nav-link">Settings</a>
+        </li>
+      @else
+        <li class="nav-item">
+          <a href="/login" class="nav-link">Login</a>
+        </li>
+        <li class="nav-item">
+          <a href="/signup" class="nav-link">Sign Up</a>
+        </li>
+      @endif
+
+      <li class="nav-item">
+        <a href="/genres" class="nav-link">Genres</a>
+      </li>
+      <li class="nav-item">
+        <a href="/tracks" class="nav-link">Tracks</a>
+      </li>
+    </ul>
     @yield('main')
 
 </body>

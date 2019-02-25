@@ -12,6 +12,7 @@
           <input type="text" name="genre" class="form-control" value="{{$genres->Name}}">
           <small class="text-danger">{{$errors->first('genre')}}</small>
         </div>
+        
         <button type="submit" class="btn btn-primary">
           Save
         </button>

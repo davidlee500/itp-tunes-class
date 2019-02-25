@@ -27,7 +27,6 @@ class GenresController extends Controller
 
     public function edit($GenreId=null){
 
-
         if($GenreId){
             $genres=DB::table('genres')->where('genres.GenreId','=', $GenreId)->first();
         }

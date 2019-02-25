@@ -92,14 +92,13 @@
             <input type="number" name="byte" class="form-control" value="{{old('byte')}}">
             <small class="text-danger">{{$errors->first('byte')}}</small>
           </div>
-
+        <!-- Number input for unit price -->
           <label for="unit_price" class="col-sm-1 col-form-label text-sm-right" id="unit_price">Unit Price</label>
           <div class="col-sm-2">
             <input type="number" name="unit_price" class="form-control" value="{{old('unit_price')}}">
             <small class="text-danger">{{$errors->first('unit_price')}}</small>
           </div>
         </div>
-        
 
         <button type="submit" class="btn btn-primary" style="float:right; width:25%;">
             Save
